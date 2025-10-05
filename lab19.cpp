@@ -21,7 +21,7 @@ class Movie{ // create movie class
         string getTitle(); // getter for title
         void setTitle(string movieTitle); // setter for title
 
-}
+};
 
 Movie::Movie(string movieTitle) {  // implementation
     title = movieTitle;
@@ -29,7 +29,6 @@ Movie::Movie(string movieTitle) {  // implementation
 }
 
 void Movie::addAtHead(double rating, string comments) {  // implementation
-   void addAtHead(double rating, string comments){
     struct Node *newNode = new Node; // create it here
     newNode -> rating = rating; // input data
     newNode -> comments = comments; //input data
@@ -37,7 +36,35 @@ void Movie::addAtHead(double rating, string comments) {  // implementation
     head = newNode; // move head to point to new node
 
 }
+
+string Movie::getTitle() { // implementation
+    return title;
 }
+
+
+void Movie::display() {
+    int count = 1; // review #
+    double sum = 0; // total rating
+    int total = 0; // number of reviews
+
+    struct Node *temp = head; // transverse the list
+    while(temp != nullptr){
+        cout << "\t> Review #" << count << ": " << temp->rating << ": " << temp->comments << endl;
+        
+        sum += temp->rating; // sum of ratings
+        total++;  // how many reviews there are
+        count++;  // add review #
+        
+        temp = temp->next;
+    }
+  
+}
+
+void Movie::setTitle(string movieTitle) {
+    // set the title
+    title = movieTitle;
+}
+
 
 
 
