@@ -8,6 +8,29 @@ struct Node{   // create a struct for the node
    Node* next;
 };
 
+class Movie{ // create movie class
+    private:
+        string title;
+        Node *head;
+    
+    public:
+        Movie(string movieTitle); //  constructor
+        void addAtHead(double rating, string comments); // add at head 
+        void display(); // display 
+        
+        int getTitle(); // getter for title
+        void setTitle(string movieTitle); // setter for title
+
+        int getHead(); // getter for head
+        void setHead(int head); // setter for head
+
+        int getTail(); // getter for tail
+        void setTail(int tail); // setter for tail
+
+}
+
+
+
 struct Node *head = nullptr; // set head to null
 
 void addAtHead(double rating, string comments); // function prototype to add at head
@@ -51,7 +74,7 @@ int main(){
 
 
     while (another == 'y' || another == 'Y'){  // while loop to continue adding reviews until user says no
-        cout << "Enter review rating 0-5: "
+        cout << "Enter review rating 0-5: ";
         cin >> rating;
         cin.ignore();
 
