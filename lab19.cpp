@@ -18,15 +18,25 @@ class Movie{ // create movie class
         void addAtHead(double rating, string comments); // add at head 
         void display(); // display 
         
-        int getTitle(); // getter for title
+        string getTitle(); // getter for title
         void setTitle(string movieTitle); // setter for title
 
-        int getHead(); // getter for head
-        void setHead(int head); // setter for head
+}
 
-        int getTail(); // getter for tail
-        void setTail(int tail); // setter for tail
+Movie::Movie(string movieTitle) {  // implementation
+    title = movieTitle;
+    head = nullptr;
+}
 
+void Movie::addAtHead(double rating, string comments) {  // implementation
+   void addAtHead(double rating, string comments){
+    struct Node *newNode = new Node; // create it here
+    newNode -> rating = rating; // input data
+    newNode -> comments = comments; //input data
+    newNode -> next = head; // point new node to head
+    head = newNode; // move head to point to new node
+
+}
 }
 
 
@@ -105,14 +115,6 @@ int main(){
 }
 
 
-void addAtHead(double rating, string comments){
-    struct Node *newNode = new Node; // create it here
-    newNode -> rating = rating; // input data
-    newNode -> comments = comments; //input data
-    newNode -> next = head; // point new node to head
-    head = newNode; // move head to point to new node
-
-}
 
 void addAtTail(double rating, string comments){
     struct Node *newNode = new Node; // create it here
