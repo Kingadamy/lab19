@@ -74,13 +74,6 @@ void Movie::setTitle(string movieTitle) {
 
 
 
-
-struct Node *head = nullptr; // set head to null
-
-void addAtHead(double rating, string comments); // function prototype to add at head
-void addAtTail(double rating, string comments); // function prototype to add at tail
-void display(); // function prototype to display the list
-
 int main(){
 
     int choice; // create int to choose to add to head or tail
@@ -150,44 +143,3 @@ int main(){
 
 
 
-void addAtTail(double rating, string comments){
-    struct Node *newNode = new Node; // create it here
-    newNode -> rating = rating; // input data
-    newNode -> comments = comments; //input data
-    newNode -> next = nullptr; // point new node to tail
-
-    if(head == nullptr) { //check if list is empty
-        head = newNode; // if it is then we set head to new node
-    }
-    else {
-        struct Node *temp = head; // create a temp node to traverse the list
-        while(temp -> next != nullptr){ // here we need to reach the last node
-            temp = temp -> next; // move to next node
-        }
-        temp -> next = newNode; // point last node to new node
-    }
-}
-
-void display(){ //display outputs now
-
-    int count = 1; // review #
-    double sum = 0; // total rating
-    int total = 0; // number of reviews
-
-    struct Node *temp = head; // transverse the list
-    while(temp != nullptr){
-        cout << "\t> Review #" << count << ": " << temp->rating << ": " << temp->comments << endl;
-        
-        sum += temp->rating; // sum of ratings
-        total++;  // how many reviews there are
-        count++;  // add review #
-        
-        temp = temp->next;
-    }
-    
-    // find averege
-    if (total > 0) {
-        cout << "\t> Average: " << (sum / total) << endl;
-    }
-
-}
