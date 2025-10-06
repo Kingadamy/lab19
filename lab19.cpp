@@ -56,6 +56,13 @@ void Movie::display() {
         count++;  // add review #
         
         temp = temp->next;
+
+    }
+
+
+          // find averege
+    if (total > 0) {
+        cout << "\t> Average: " << (sum / total) << endl;
     }
   
 }
