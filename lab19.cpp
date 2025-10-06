@@ -102,6 +102,26 @@ int main(){
     movies.push_back(movie3);
     movies.push_back(movie4);
 
+    string comment;
+
+     // Add 3 reviews to each movie
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < 3; j++) {
+            getline(inFile, comment);  // read one line from file
+            double rating = (rand() % 41 + 10) / 10.0;  // random 1-5
+            movies[i].addAtHead(rating, comment);
+        }
+    }
+
+     // Display movies and reviews
+    for (int i = 0; i < movies.size(); i++) {
+        cout << "Movie: " << movies[i].getTitle() << endl;
+        movies[i].display();
+        cout << endl;
+    }
+    
+    inFile.close();  // close the file
+
  
     return 0;
 
